@@ -5,7 +5,6 @@ import { getFlattenedLocation, sortObjectArrayByKey } from './utils/sortObjectAr
 
 function App() {
 
-  const [randomUserList, setRandomUserList] = useState<Array<any>>([]);
   const [locationList, setLocationList] = useState<Array<any>>([]);
 
   useEffect(() => {
@@ -15,7 +14,6 @@ function App() {
           return getFlattenedLocation(result.location);
         });
         const sortedLocationList = sortObjectArrayByKey(locationList, 'city');
-        setRandomUserList(data.results);
         setLocationList(sortedLocationList);
       })
   }, [])

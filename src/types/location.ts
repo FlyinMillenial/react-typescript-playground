@@ -23,3 +23,16 @@ export const locationObjectKeys = [
     'timezoneDescription',
     'timezoneOffset'
 ]
+
+export const locationLabelMap = {
+    city: 'City',
+    state: 'State',
+    country: 'Country',
+    postcode: 'Post Code',
+    latitude: 'Latitude',
+    longitude: 'Longitude',
+    streetNumber: 'Street Number',
+    streetName: 'Street Name',
+    timezoneDescription: 'Timezone',
+    timezoneOffset: 'Timezone Offset'
+}

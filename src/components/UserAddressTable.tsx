@@ -8,13 +8,17 @@ interface UserAddressTableProps {
 
 const UserAddressTable = (props:UserAddressTableProps) => {
 
-    // Could we define a custom hook that takes in either an interface or a null object or array of keys
-    // and defines the state for these ascending booleans?
-    const [cityAscending, setCityAscending] = useState(false);
+    const [ascending, setAscending] = useState(false);
+    const [currentSortKey, setCurrentSortKey] = useState('city');
 
-    const callSortingCallback = (keyToSortBy:string, ascendingState:boolean, ascendingSetter: Function) => {
-        props.sortingCallback(keyToSortBy, ascendingState);
-        ascendingSetter(!ascendingState);
+    const callSortingCallback = (keyToSortBy:string) => {
+        if (keyToSortBy === currentSortKey) {
+            setAscending(!ascending);
+        } else {
+            setAscending(true);
+            setCurrentSortKey(keyToSortBy);
+        }
+        props.sortingCallback(keyToSortBy, ascending);
     }
 
     // We should make this programatic, and have a table header component that deals with all these concerns
@@ -24,16 +28,16 @@ const UserAddressTable = (props:UserAddressTableProps) => {
         <table>
             <thead>
                 <tr>
-                    <th onClick={() => {callSortingCallback('city', cityAscending, setCityAscending)}}>City</th>
-                    <th onClick={() => {props.sortingCallback('latitude')}}>Latitude</th>
-                    <th onClick={() => {props.sortingCallback('longitude')}}>Longitude</th>
-                    <th onClick={() => {props.sortingCallback('country')}}>Country</th>
-                    <th onClick={() => {props.sortingCallback('postcode')}}>Post Code</th>
-                    <th onClick={() => {props.sortingCallback('state')}}>State</th>
-                    <th onClick={() => {props.sortingCallback('streetNumber')}}>Street Number</th>
-                    <th onClick={() => {props.sortingCallback('streetName')}}>Street Name</th>
-                    <th onClick={() => {props.sortingCallback('timezoneDescription')}}>Timezone description</th>
-                    <th onClick={() => {props.sortingCallback('timezoneOffset')}}>Timezone offset</th>
+                    <th onClick={() => {callSortingCallback('city')}}>City</th>
+                    <th onClick={() => {callSortingCallback('latitude')}}>Latitude</th>
+                    <th onClick={() => {callSortingCallback('longitude')}}>Longitude</th>
+                    <th onClick={() => {callSortingCallback('country')}}>Country</th>
+                    <th onClick={() => {callSortingCallback('postcode')}}>Post Code</th>
+                    <th onClick={() => {callSortingCallback('state')}}>State</th>
+                    <th onClick={() => {callSortingCallback('streetNumber')}}>Street Number</th>
+                    <th onClick={() => {callSortingCallback('streetName')}}>Street Name</th>
+                    <th onClick={() => {callSortingCallback('timezoneDescription')}}>Timezone description</th>
+                    <th onClick={() => {callSortingCallback('timezoneOffset')}}>Timezone offset</th>
                 </tr>
             </thead>
             <tbody>

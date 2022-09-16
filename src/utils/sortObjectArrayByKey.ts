@@ -1,3 +1,4 @@
+// TODOD: The floats stored as strings don't sort properly
 const sortObjectArrayByKey = (inputList: Array<any>, keyToSortBy: string, ascending:boolean = true) => {
     const listToSort = [...inputList];
     listToSort.sort((a, b) => {
