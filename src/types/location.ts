@@ -11,20 +11,7 @@ export interface location {
     timezoneOffset: string,
 }
 
-export const locationObjectKeys = [    
-    'city',
-    'state',
-    'country',
-    'postcode',
-    'latitude',
-    'longitude',
-    'streetNumber',
-    'streetName',
-    'timezoneDescription',
-    'timezoneOffset'
-]
-
-export const locationLabelMap = {
+export const locationLabelMap: {[key:string]: string} = {
     city: 'City',
     state: 'State',
     country: 'Country',
