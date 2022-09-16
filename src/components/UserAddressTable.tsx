@@ -7,6 +7,7 @@ interface UserAddressTableProps {
     sortingCallback: Function
 }
 
+// TODO: Factor out the domain-specific stuff
 const UserAddressTable = (props:UserAddressTableProps) => {
 
     const [ascending, setAscending] = useState(false);
