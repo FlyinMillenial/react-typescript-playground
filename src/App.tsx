@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getRandomUsers } from './api/randomUserClient';
-import UserAddressTable from './components/UserAddressTable';
-import { getFlattenedLocation, sortObjectArrayByKey } from './utils/sortObjectArrayByKey';
+import SortableTable from './components/SortableTable';
+import { getFlattenedLocation, locationLabelMap } from './types/location';
+import { sortObjectArrayByKey } from './utils/sortObjectArrayByKey';
 
 function App() {
 
@@ -24,9 +25,7 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <UserAddressTable locations={locationList} sortingCallback={setSortedLocationList}></UserAddressTable>
-    </div>
+    <SortableTable tableData={locationList} rowDataMap={locationLabelMap} sortingCallback={setSortedLocationList}></SortableTable>
   );
 }
 
