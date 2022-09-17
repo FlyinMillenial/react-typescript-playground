@@ -1,11 +1,7 @@
 import axios from "axios"
 
-interface RandomUserResults {
-    results: Array<any>
-}
-
 const getRandomUsers = async () => {
-    return axios.get('https://randomuser.me/api/?results=20')
+    return axios.get('https://randomuser.me/api/?results=100')
         .catch((error) => {
             return error;
         })
