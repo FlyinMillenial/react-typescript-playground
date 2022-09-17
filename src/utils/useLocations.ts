@@ -8,7 +8,7 @@ export const useLocations = ():[Array<location>, Function] => {
 
   // Fetch address data, flatten it, and sort it by city
   useEffect(() => {
-    getRandomUsers().then(
+    getRandomUsers(20).then(
       (data) => {
         const locationList = data.results.map((result:any) => {
           return getFlattenedLocation(result.location);
