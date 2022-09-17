@@ -6,8 +6,10 @@ import { sortObjectArrayByKey } from './utils/sortObjectArrayByKey';
 
 function App() {
 
+  // Bust this out into a custom hook
   const [locationList, setLocationList] = useState<Array<any>>([]);
 
+  // Fetch address data, flatten it, and sort it by city
   useEffect(() => {
     getRandomUsers().then(
       (data) => {
