@@ -4,7 +4,7 @@ import { sortObjectArrayByKey } from './utils/sortObjectArrayByKey';
 import { useLocations } from './utils/useLocations';
 
 function App() {
-  const [locationList, setLocationList] = useLocations();
+  const [locationList, setLocationList] = useLocations(20);
 
   const setSortedLocationList = (keyToSortBy:string, ascending: boolean = true) => {
     const sortedLocationList = sortObjectArrayByKey(locationList, keyToSortBy, ascending);
