@@ -1,18 +1,12 @@
-import SortableTable from './components/SortableTable';
-import { locationLabelMap } from './types/location';
-import { sortObjectArrayByKey } from './utils/sortObjectArrayByKey';
-import { useLocations } from './utils/useLocations';
+import LocationTable from './components/LocationTable';
+import PokemonViewer from './components/PokemonViewer';
 
 function App() {
-  const [locationList, setLocationList] = useLocations(20);
-
-  const setSortedLocationList = (keyToSortBy:string, ascending: boolean = true) => {
-    const sortedLocationList = sortObjectArrayByKey(locationList, keyToSortBy, ascending);
-    setLocationList(sortedLocationList);
-  }
-
   return (
-    <SortableTable tableData={locationList} rowDataMap={locationLabelMap} sortingCallback={setSortedLocationList}></SortableTable>
+    <>
+        <LocationTable />
+        <PokemonViewer />
+    </>
   );
 }
 
