@@ -1,3 +1,4 @@
+import ContextSetter from './components/ContextSetter';
 import ContextViewer from './components/ContextViewer';
 import LocationTable from './components/LocationTable';
 import PokemonViewer from './components/PokemonViewer';
@@ -11,6 +12,7 @@ function App() {
         <LocationTable />
         <PokemonViewer />
         <ContextViewer />
+        <ContextSetter />
     </PokemonContextProvider>
   );
 }
