@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRandomUsers, getRandomUsersFetch } from "../api/randomUserClient";
+import { getRandomUsersFetch } from "../api/randomUserClient";
 import { getFlattenedLocation, location } from "../types/location";
 import { sortObjectArrayByKey } from "./sortObjectArrayByKey";
 

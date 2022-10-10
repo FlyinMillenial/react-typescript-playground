@@ -12,7 +12,7 @@ function App() {
         <LocationTable />
         <PokemonViewer />
         <ContextViewer />
-        <ContextSetter />
+        <ContextSetter /> 
     </PokemonContextProvider>
   );
 }
